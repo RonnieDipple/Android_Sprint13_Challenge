@@ -1,14 +1,16 @@
 package com.example.makeup_best_practices_sprint_challenge.Model
 
-data class MakeUpProduct(val brand: String/*,
+data class MakeUpProductData(val brand: String,
                          val id: Int,
                          val name: String,
                          val price: String,
+                             val rating: Int/*,
+
                          val imageLink: String,
                          val productLink: String,
                          val websiteLink: String,
                          val description: String,
-                         val rating: Int,
+
                          val productType: String,
                          val createdAt: String,
                          val updatedAt: String,
