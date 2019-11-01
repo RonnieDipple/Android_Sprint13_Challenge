@@ -5,8 +5,8 @@ import androidx.lifecycle.ViewModel
 import com.example.makeup_best_practices_sprint_challenge.Model.MakeUpProductData
 
 class ListViewModel: ViewModel(){
-    val brands = MutableLiveData<List<MakeUpProductData>>()
-    val brandLoadError = MutableLiveData<Boolean>()
+    val makeup = MutableLiveData<List<MakeUpProductData>>()
+    val makeUpLoadError = MutableLiveData<Boolean>()
     val loading = MutableLiveData<Boolean>()
 
     fun refresh(){
@@ -29,8 +29,9 @@ class ListViewModel: ViewModel(){
             MakeUpProductData("MakeUpProductData 10", 10,"J", "1000",4)
             )
 
-        brandLoadError.value = false
+
+        makeUpLoadError.value = false
         loading.value = false
-        brands.value = mockData
+        makeup.value = mockData
     }
 }
