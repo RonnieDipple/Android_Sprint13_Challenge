@@ -1,7 +1,8 @@
-package com.example.makeup_best_practices_sprint_challenge
+package com.example.makeup_best_practices_sprint_challenge.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.makeup_best_practices_sprint_challenge.R
 
 class MainActivity : AppCompatActivity() {
 
