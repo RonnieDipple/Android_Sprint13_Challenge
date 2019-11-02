@@ -29,13 +29,14 @@ class MainActivity : AppCompatActivity() {
         recyclerView_makeUpList.apply {
             setHasFixedSize(false)
             layoutManager = LinearLayoutManager(this@MainActivity)
-            adapter = MakeUpAdapter(mockdata)
+            adapter = MakeUpAdapter(makeUpList)
         }
 
         search_icon.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
 
             override fun onQueryTextSubmit(search: String?): Boolean {
-                makeUpService.getList("${search}").subscribeOn(Schedulers.io())
+                makeUpService.getList("${search}")
+                    .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe (
                         { query ->
@@ -58,7 +59,8 @@ class MainActivity : AppCompatActivity() {
     }
 
 //The mockdata has helped with this bug, the recycler is now working
-    val mockdata = mutableListOf<MakeUpData>(
+//
+    /*val mockdata = mutableListOf<MakeUpData>(
         MakeUpData("Test","TestName", "PriceTest", 4, "Imageplaceholder"),
-        MakeUpData("Test2", "TestName2", "PriceTest", 4, "Imageplaceholder2"))
+        MakeUpData("Test2", "TestName2", "PriceTest", 4, "Imageplaceholder2"))*/
 }

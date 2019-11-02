@@ -39,7 +39,7 @@ class MakeUpAdapter(val makeUpDataList: List<MakeUpData>): RecyclerView.Adapter<
         holder.textViewBrand.setText(makeUpData.brand)
         holder.textViewPrice.setText(makeUpData.price)
         holder.ratingBar.numStars = makeUpData.rating
-        Picasso.get().load(makeUpData.imageLink).into(holder.imageView)
+        Picasso.get().load(makeUpData.image_link).into(holder.imageView)
     }
 
 
